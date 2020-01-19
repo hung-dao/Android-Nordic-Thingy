@@ -45,7 +45,7 @@
             android:checked="false"
             android:icon="@drawable/ic_weather"
             android:title="@string/environment_service_title" />
-        <item
+<!--        <item
             android:id="@+id/navigation_ui"
             android:checked="false"
             android:icon="@drawable/ic_widgets"
@@ -64,7 +64,7 @@
             android:id="@+id/navigation_cloud"
             android:checked="false"
             android:icon="@drawable/ic_cloud_upload"
-            android:title="@string/cloud_title" />
+            android:title="@string/cloud_title" />-->
     </group>
     <group
         android:checkableBehavior="single"

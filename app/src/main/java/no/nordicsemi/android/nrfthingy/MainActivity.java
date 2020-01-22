@@ -760,7 +760,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     getSupportFragmentManager().beginTransaction().add(R.id.container, environmentServiceFragment, mFragmentTag).commit();
                 }
                 break;
-            case R.id.navigation_motion:
+            /*case R.id.navigation_motion:
                 if (fragmentManager.findFragmentByTag(Utils.MOTION_FRAGMENT) == null) {
                     if (mThingySdkManager.isConnected(mDevice)) {
                         mThingySdkManager.enableEnvironmentNotifications(mDevice, false);
@@ -774,9 +774,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     mFragmentTag = Utils.MOTION_FRAGMENT;
                     MotionServiceFragment motionServiceFragment = MotionServiceFragment.newInstance(mDevice);
                     getSupportFragmentManager().beginTransaction().add(R.id.container, motionServiceFragment, mFragmentTag).commit();
-                }
-                break;
-            case R.id.navigation_ui:
+                }*/
+                //break;
+            /*case R.id.navigation_ui:
                 if (fragmentManager.findFragmentByTag(Utils.UI_FRAGMENT) == null) {
                     if (mThingySdkManager.isConnected(mDevice)) {
                         mThingySdkManager.enableEnvironmentNotifications(mDevice, false);
@@ -790,9 +790,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     mFragmentTag = Utils.UI_FRAGMENT;
                     UiFragment uiFragment = UiFragment.newInstance(mDevice);
                     getSupportFragmentManager().beginTransaction().add(R.id.container, uiFragment, mFragmentTag).commit();
-                }
-                break;
-            case R.id.navigation_sound:
+                }*/
+                //break;
+           /* case R.id.navigation_sound:
                 if (fragmentManager.findFragmentByTag(Utils.SOUND_FRAGMENT) == null) {
                     if (mThingySdkManager.isConnected(mDevice)) {
                         mThingySdkManager.enableEnvironmentNotifications(mDevice, false);
@@ -805,9 +805,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     mFragmentTag = Utils.SOUND_FRAGMENT;
                     SoundFragment soundFragment = SoundFragment.newInstance(mDevice);
                     getSupportFragmentManager().beginTransaction().add(R.id.container, soundFragment, mFragmentTag).commit();
-                }
-                break;
-            case R.id.navigation_cloud:
+                }*/
+                //break;
+           /* case R.id.navigation_cloud:
                 if (fragmentManager.findFragmentByTag(Utils.CLOUD_FRAGMENT) == null) {
                     if (mThingySdkManager.isConnected(mDevice)) {
                         mThingySdkManager.enableTemperatureNotifications(mDevice, mDatabaseHelper.getTemperatureUploadState(mDevice.getAddress()));
@@ -825,8 +825,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     mFragmentTag = Utils.CLOUD_FRAGMENT;
                     CloudFragment mapFragment = CloudFragment.newInstance(mDevice);
                     getSupportFragmentManager().beginTransaction().add(R.id.container, mapFragment, mFragmentTag).commit();
-                }
-                break;
+                }*/
+                //break;
         }
 
         if (mBinder != null) {
@@ -1055,18 +1055,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case Utils.ENVIRONMENT_FRAGMENT:
                 checkSelection(mNavigationView.getMenu().findItem(R.id.navigation_environment));
                 break;
-            case Utils.UI_FRAGMENT:
-                checkSelection(mNavigationView.getMenu().findItem(R.id.navigation_ui));
-                break;
-            case Utils.MOTION_FRAGMENT:
-                checkSelection(mNavigationView.getMenu().findItem(R.id.navigation_motion));
-                break;
-            case Utils.SOUND_FRAGMENT:
-                checkSelection(mNavigationView.getMenu().findItem(R.id.navigation_sound));
-                break;
-            case Utils.CLOUD_FRAGMENT:
-                checkSelection(mNavigationView.getMenu().findItem(R.id.navigation_cloud));
-                break;
+            /*case Utils.UI_FRAGMENT:
+                checkSelection(mNavigationView.getMenu().findItem(R.id.navigation_ui));*/
+                //break;
+            /*case Utils.MOTION_FRAGMENT:
+                checkSelection(mNavigationView.getMenu().findItem(R.id.navigation_motion));*/
+                //break;
+            /*case Utils.SOUND_FRAGMENT:
+                checkSelection(mNavigationView.getMenu().findItem(R.id.navigation_sound));*/
+                //break;
+            /*case Utils.CLOUD_FRAGMENT:
+                checkSelection(mNavigationView.getMenu().findItem(R.id.navigation_cloud));*/
+                //break;
         }
     }
 

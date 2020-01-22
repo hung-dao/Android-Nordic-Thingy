@@ -121,12 +121,14 @@ public class EnvironmentServiceFragment extends Fragment implements ScannerFragm
 
         String mTemperature;
         String mTemperatureTimeStamp;
+
         String mPressure;
         String mPressureTimeStamp;
         String mHumidityTimeStamp;
         String mHumidity;
         int mECO2;
         int mTVOC;
+
 
         @Override
         public void onDeviceConnected(BluetoothDevice device, int connectionState) {
@@ -161,42 +163,42 @@ public class EnvironmentServiceFragment extends Fragment implements ScannerFragm
 
         @Override
         public void onPressureValueChangedEvent(BluetoothDevice bluetoothDevice, final String pressure) {
-            mPressure = pressure;
+            /*mPressure = pressure;
             mPressureTimeStamp = ThingyUtils.TIME_FORMAT.format(System.currentTimeMillis());
             if (mIsFragmentAttached) {
                 mPressureView.setText(getString(R.string.hecto_pascal, mPressure));
                 handleTemperatureGraphUpdates(mLineChartPressure);
                 addPressureEntry(mPressureTimeStamp, Float.valueOf(mPressure));
-            }
+            }*/
         }
 
         @Override
         public void onHumidityValueChangedEvent(BluetoothDevice bluetoothDevice, final String humidity) {
-            mHumidity = humidity;
+            /*mHumidity = humidity;
             mHumidityTimeStamp = ThingyUtils.TIME_FORMAT.format(System.currentTimeMillis());
             if (mIsFragmentAttached) {
                 mHumidityView.setText(mHumidity + "%");
                 handleTemperatureGraphUpdates(mLineChartHumidity);
                 addHumidityEntry(mHumidityTimeStamp, Float.parseFloat(mHumidity));
-            }
+            }*/
         }
 
         @Override
         public void onAirQualityValueChangedEvent(BluetoothDevice bluetoothDevice, final int eco2, final int tvoc) {
-            mECO2 = eco2;
+       /*     mECO2 = eco2;
             mTVOC = tvoc;
             if (mIsFragmentAttached) {
                 mCarbon.setText(getString(R.string.ppm, mECO2));
                 mTvoc.setText(getString(R.string.ppb, mTVOC));
-            }
+            }*/
         }
 
         @Override
         public void onColorIntensityValueChangedEvent(BluetoothDevice bluetoothDevice, final float red, final float green, final float blue, final float alpha) {
-            final String colorText = createColorValue(red, green, blue, alpha);
+           /* final String colorText = createColorValue(red, green, blue, alpha);
             if (mIsFragmentAttached) {
                 mColorView.setText(colorText);
-            }
+            }*/
         }
 
         @Override
@@ -316,15 +318,15 @@ public class EnvironmentServiceFragment extends Fragment implements ScannerFragm
         mColorView = rootView.findViewById(R.id.color);
         mWeatherSettings = rootView.findViewById(R.id.weather_settings);
 
-        mBlob = rootView.findViewById(R.id.blob);
-        mShape = (GradientDrawable) mBlob.getDrawable();
+        //mBlob = rootView.findViewById(R.id.blob);
+        //mShape = (GradientDrawable) mBlob.getDrawable();
 
         mLineChartTemperature = rootView.findViewById(R.id.line_chart_temperature);
         mLineChartPressure = rootView.findViewById(R.id.line_chart_pressure);
         mLineChartHumidity = rootView.findViewById(R.id.line_chart_humidity);
         prepareTemperatureGraph();
-        preparePressureGraph();
-        prepareHumidityGraph();
+        //preparePressureGraph();
+        //prepareHumidityGraph();
         mDatabaseHelper = new DatabaseHelper(getActivity());
 
         if (toolbarEnvironment != null) {
@@ -691,7 +693,7 @@ public class EnvironmentServiceFragment extends Fragment implements ScannerFragm
         }
     }
 
-    private void preparePressureGraph() {
+/*    private void preparePressureGraph() {
         mLineChartPressure.setDescription(getString(R.string.time));
         mLineChartPressure.setTouchEnabled(true);
         mLineChartPressure.setVisibleXRangeMinimum(5);
@@ -702,8 +704,8 @@ public class EnvironmentServiceFragment extends Fragment implements ScannerFragm
         mLineChartPressure.setAutoScaleMinMaxEnabled(true);
         mLineChartPressure.setDrawGridBackground(false);
         mLineChartPressure.setBackgroundColor(Color.WHITE);
-        /*final ChartMarker marker = new ChartMarker(getActivity(), R.layout.marker_layout_pressure);
-        mLineChartPressure.setMarkerView(marker);*/
+        *//*final ChartMarker marker = new ChartMarker(getActivity(), R.layout.marker_layout_pressure);
+        mLineChartPressure.setMarkerView(marker);*//*
 
         LineData data = new LineData();
         data.setValueFormatter(new TemperatureChartValueFormatter());
@@ -729,7 +731,7 @@ public class EnvironmentServiceFragment extends Fragment implements ScannerFragm
         leftAxis.setLabelCount(10, false); //
         YAxis rightAxis = mLineChartPressure.getAxisRight();
         rightAxis.setEnabled(false);
-    }
+    }*/
 
     private LineDataSet createPressureDataSet() {
         LineDataSet lineDataSet = new LineDataSet(null, getString(R.string.pressure_graph));

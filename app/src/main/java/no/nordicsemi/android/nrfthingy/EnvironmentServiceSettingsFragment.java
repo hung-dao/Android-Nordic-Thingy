@@ -109,7 +109,7 @@ public class EnvironmentServiceSettingsFragment extends DialogFragment {
         mHumidityIntervalView = view.findViewById(R.id.interval_humidity);
         mColorIntensityIntervalView = view.findViewById(R.id.interval_color_intensity);
 
-        mGasModeView = view.findViewById(R.id.spinner_gas_mode);
+        //mGasModeView = view.findViewById(R.id.spinner_gas_mode);
 
         mTemperatureIntervalView.addTextChangedListener(new TextWatcher() {
             @Override

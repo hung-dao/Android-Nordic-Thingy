@@ -173,9 +173,9 @@ public class ThingyListenerHelper {
                         globalListener.onAirQualityValueChangedEvent(device, eco2, tvoc);
                     }
 
-                    if(thingyListener != null) {
+                   /* if(thingyListener != null) {
                         thingyListener.onAirQualityValueChangedEvent(device, eco2, tvoc);
-                    }
+                    }*/
                     break;
                 case ThingyUtils.COLOR_NOTIFICATION:
                     final float r = intent.getExtras().getFloat(ThingyUtils.EXTRA_DATA_RED);

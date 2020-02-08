@@ -61,15 +61,19 @@ import no.nordicsemi.android.thingylib.utils.ThingyUtils;
 public class EnvironmentServiceSettingsFragment extends DialogFragment {
 
     private TextInputLayout mTemperatureIntervalLayout;
+/*
     private TextInputLayout mPressureIntervalLayout;
     private TextInputLayout mHumidityIntervalLayout;
     private TextInputLayout mColorIntensityIntervalLayout;
+*/
 
     private TextInputEditText mTemperatureIntervalView;
+/*
     private TextInputEditText mPressureIntervalView;
     private TextInputEditText mHumidityIntervalView;
     private TextInputEditText mColorIntensityIntervalView;
     private Spinner mGasModeView;
+*/
 
     private BluetoothDevice mDevice;
 
@@ -100,14 +104,16 @@ public class EnvironmentServiceSettingsFragment extends DialogFragment {
         final View view = LayoutInflater.from(getActivity()).inflate(R.layout.fragment_dialog_environment_settings, null);
 
         mTemperatureIntervalLayout = view.findViewById(R.id.layout_temperature);
+/*
         mPressureIntervalLayout = view.findViewById(R.id.layout_pressure);
         mHumidityIntervalLayout = view.findViewById(R.id.layout_humidity);
         mColorIntensityIntervalLayout = view.findViewById(R.id.layout_color_intensity);
+*/
 
         mTemperatureIntervalView = view.findViewById(R.id.interval_temperature);
-        mPressureIntervalView = view.findViewById(R.id.interval_pressure);
+/*        mPressureIntervalView = view.findViewById(R.id.interval_pressure);
         mHumidityIntervalView = view.findViewById(R.id.interval_humidity);
-        mColorIntensityIntervalView = view.findViewById(R.id.interval_color_intensity);
+        mColorIntensityIntervalView = view.findViewById(R.id.interval_color_intensity);*/
 
         //mGasModeView = view.findViewById(R.id.spinner_gas_mode);
 
@@ -137,7 +143,7 @@ public class EnvironmentServiceSettingsFragment extends DialogFragment {
             }
         });
 
-        mPressureIntervalView.addTextChangedListener(new TextWatcher() {
+        /*mPressureIntervalView.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -161,8 +167,9 @@ public class EnvironmentServiceSettingsFragment extends DialogFragment {
             public void afterTextChanged(Editable s) {
 
             }
-        });
+        });*/
 
+/*
         mHumidityIntervalView.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -188,7 +195,9 @@ public class EnvironmentServiceSettingsFragment extends DialogFragment {
 
             }
         });
+*/
 
+/*
         mColorIntensityIntervalView.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -214,6 +223,7 @@ public class EnvironmentServiceSettingsFragment extends DialogFragment {
 
             }
         });
+*/
 
 
         alertDialogBuilder.setView(view).setPositiveButton(getString(R.string.confirm), null).setNegativeButton(getString(R.string.cancel), null);
@@ -254,7 +264,7 @@ public class EnvironmentServiceSettingsFragment extends DialogFragment {
             }
         }
 
-        final String pressureInterval = mPressureIntervalView.getText().toString().trim();
+/*        final String pressureInterval = mPressureIntervalView.getText().toString().trim();
         if (pressureInterval.isEmpty()) {
             mPressureIntervalLayout.setError(getString(R.string.error_pressure_interval_empty));
             return false;
@@ -264,9 +274,9 @@ public class EnvironmentServiceSettingsFragment extends DialogFragment {
                 mPressureIntervalLayout.setError(getString(R.string.error_pressure_interval));
                 return false;
             }
-        }
+        }*/
 
-        final String humidityInterval = mHumidityIntervalView.getText().toString().trim();
+/*        final String humidityInterval = mHumidityIntervalView.getText().toString().trim();
         if (humidityInterval.isEmpty()) {
             mHumidityIntervalLayout.setError(getString(R.string.error_humidity_interval_empty));
             return false;
@@ -276,9 +286,9 @@ public class EnvironmentServiceSettingsFragment extends DialogFragment {
                 mHumidityIntervalLayout.setError(getString(R.string.error_humidity_interval));
                 return false;
             }
-        }
+        }*/
 
-        final String colorInterval = mColorIntensityIntervalView.getText().toString().trim();
+/*        final String colorInterval = mColorIntensityIntervalView.getText().toString().trim();
         if (colorInterval.isEmpty()) {
             mColorIntensityIntervalLayout.setError(getString(R.string.error_color_intensity_interval_empty));
             return false;
@@ -288,7 +298,7 @@ public class EnvironmentServiceSettingsFragment extends DialogFragment {
                 mColorIntensityIntervalLayout.setError(getString(R.string.error_color_intensity_interval));
                 return false;
             }
-        }
+        }*/
 
         return true;
     }
@@ -296,6 +306,7 @@ public class EnvironmentServiceSettingsFragment extends DialogFragment {
     private void configureEnvironmentService() {
         final int temperatureInterval = Integer.parseInt(mTemperatureIntervalView.getText().toString().trim());
 
+/*
         final int pressureInterval = Integer.parseInt(mPressureIntervalView.getText().toString().trim());
 
         final int humidityInterval = Integer.parseInt(mHumidityIntervalView.getText().toString().trim());
@@ -303,14 +314,15 @@ public class EnvironmentServiceSettingsFragment extends DialogFragment {
         final int colorIntensityInterval = Integer.parseInt(mColorIntensityIntervalView.getText().toString().trim());
 
         final int gasMode = mGasModeView.getSelectedItemPosition() + 1;
-        mThingySdkManager.setEnvironmentConfigurationCharacteristic(mDevice, temperatureInterval, pressureInterval, humidityInterval, colorIntensityInterval, gasMode);
+*/
+        mThingySdkManager.setEnvironmentConfigurationCharacteristic(mDevice, temperatureInterval, 0, 0, 0, 0); //pressureInterval, humidityInterval, colorIntensityInterval, gasMode);
     }
 
     private void updateUi() {
         final String mTemperatureInterval = String.valueOf(mThingySdkManager.getEnvironmentTemperatureInterval(mDevice));
         mTemperatureIntervalView.setText(mTemperatureInterval);
 
-        final String mPressureInterval = String.valueOf(mThingySdkManager.getPressureInterval(mDevice));
+ /*       final String mPressureInterval = String.valueOf(mThingySdkManager.getPressureInterval(mDevice));
         mPressureIntervalView.setText(mPressureInterval);
 
         final String mHumidityInterval = String.valueOf(mThingySdkManager.getHumidityInterval(mDevice));
@@ -320,6 +332,6 @@ public class EnvironmentServiceSettingsFragment extends DialogFragment {
         mColorIntensityIntervalView.setText(mColorIntensityInterval);
 
         final String mGasMode = String.valueOf(mThingySdkManager.getGasMode(mDevice));
-        mGasModeView.setSelection(Integer.valueOf(mGasMode) - 1);
+        mGasModeView.setSelection(Integer.valueOf(mGasMode) - 1);*/
     }
 }

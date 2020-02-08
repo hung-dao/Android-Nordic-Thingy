@@ -38,19 +38,19 @@
 
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item
+    <!--<item
         android:id="@+id/action_about"
         android:title="@string/action_about"
         android:icon="@drawable/ic_info_grey"
         android:orderInCategory="100"
-        app:showAsAction="always" />
+        app:showAsAction="always" />-->
     <item
         android:id="@+id/action_temperature_notifications"
         android:title="@string/temperature_title"
         android:checkable="true"
         android:orderInCategory="101"
         app:showAsAction="never" />
-    <item
+    <!--<item
         android:id="@+id/action_pressure_notifications"
         android:title="@string/pressure_title"
         android:checkable="true"
@@ -73,5 +73,5 @@
         android:title="@string/color_intensity_title"
         android:checkable="true"
         android:orderInCategory="105"
-        app:showAsAction="never" />
+        app:showAsAction="never" />-->
 </menu>

@@ -358,7 +358,7 @@ public class EnvironmentServiceFragment extends Fragment implements ScannerFragm
                                 mTemperatureView.setText("");
                             }
                             break;
-                        case R.id.action_pressure_notifications:
+                        /*case R.id.action_pressure_notifications:
                             if (item.isChecked()) {
                                 item.setChecked(false);
                                 mDatabaseHelper.updateNotificationsState(mDevice.getAddress(), item.isChecked(), ThingyDbColumns.COLUMN_NOTIFICATION_PRESSURE);
@@ -370,8 +370,8 @@ public class EnvironmentServiceFragment extends Fragment implements ScannerFragm
                                 mThingySdkManager.enablePressureNotifications(mDevice, item.isChecked());
                                 mPressureView.setText("");
                             }
-                            break;
-                        case R.id.action_humidity_notifications:
+                            break;*/
+                        /*case R.id.action_humidity_notifications:
                             if (item.isChecked()) {
                                 item.setChecked(false);
                                 mDatabaseHelper.updateNotificationsState(mDevice.getAddress(), item.isChecked(), ThingyDbColumns.COLUMN_NOTIFICATION_HUMIDITY);
@@ -383,8 +383,8 @@ public class EnvironmentServiceFragment extends Fragment implements ScannerFragm
                                 mThingySdkManager.enableHumidityNotifications(mDevice, item.isChecked());
                                 mHumidityView.setText("");
                             }
-                            break;
-                        case R.id.action_air_quality_notifications:
+                            break;*/
+                        /*case R.id.action_air_quality_notifications:
                             if (item.isChecked()) {
                                 item.setChecked(false);
                                 mDatabaseHelper.updateNotificationsState(mDevice.getAddress(), item.isChecked(), ThingyDbColumns.COLUMN_NOTIFICATION_AIR_QUALITY);
@@ -398,8 +398,8 @@ public class EnvironmentServiceFragment extends Fragment implements ScannerFragm
                                 mCarbon.setText("");
                                 mTvoc.setText("");
                             }
-                            break;
-                        case R.id.action_color_notifications:
+                            break;*/
+                        /*case R.id.action_color_notifications:
                             if (item.isChecked()) {
                                 item.setChecked(false);
                                 mDatabaseHelper.updateNotificationsState(mDevice.getAddress(), item.isChecked(), ThingyDbColumns.COLUMN_NOTIFICATION_COLOR);
@@ -411,7 +411,7 @@ public class EnvironmentServiceFragment extends Fragment implements ScannerFragm
                                 mThingySdkManager.enableColorNotifications(mDevice, item.isChecked());
                                 mColorView.setText("");
                             }
-                            break;
+                            break;*/
                     }
                     return true;
                 }
@@ -528,7 +528,7 @@ public class EnvironmentServiceFragment extends Fragment implements ScannerFragm
             environmentStatusMenu.findItem(R.id.action_temperature_notifications).setChecked(false);
         }
 
-        if (mDatabaseHelper.getNotificationsState(address, ThingyDbColumns.COLUMN_NOTIFICATION_PRESSURE)) {
+        /*if (mDatabaseHelper.getNotificationsState(address, ThingyDbColumns.COLUMN_NOTIFICATION_PRESSURE)) {
             environmentStatusMenu.findItem(R.id.action_pressure_notifications).setChecked(true);
         } else {
             environmentStatusMenu.findItem(R.id.action_pressure_notifications).setChecked(false);
@@ -550,7 +550,7 @@ public class EnvironmentServiceFragment extends Fragment implements ScannerFragm
             environmentStatusMenu.findItem(R.id.action_color_notifications).setChecked(true);
         } else {
             environmentStatusMenu.findItem(R.id.action_color_notifications).setChecked(false);
-        }
+        }*/
     }
 
     private void prepareTemperatureGraph() {

@@ -84,7 +84,7 @@ public class Utils {
     public static final String ERROR_AUDIO_RECORD = "ERROR";
 
     public static final float CHART_LINE_WIDTH = 2.0f;
-    public static final float CHART_VALUE_TEXT_SIZE = 6.5f;
+    public static final float CHART_VALUE_TEXT_SIZE = 10f;
 
     public static final String EXTRA_APP = "application/vnd.no.nordicsemi.type.app";
     public static final String EXTRA_ADDRESS_DATA = "text/plain";

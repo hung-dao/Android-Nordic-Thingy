@@ -915,7 +915,7 @@ public class EnvironmentServiceFragment extends Fragment implements ScannerFragm
         private DecimalFormat mFormat;
 
         TemperatureChartValueFormatter() {
-            mFormat = new DecimalFormat("##,##,#0.00");
+            mFormat = new DecimalFormat("##,##,#0.0");
         }
 
         @Override

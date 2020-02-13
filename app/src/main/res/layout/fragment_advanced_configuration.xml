@@ -94,7 +94,7 @@
 
             </LinearLayout>
 
-            <View style="@style/PreferenceCategoryDivider"/>
+            <!--<View style="@style/PreferenceCategoryDivider"/>
 
             <LinearLayout
                 android:id="@+id/category_pressure_interval"
@@ -129,8 +129,8 @@
                 </LinearLayout>
 
             </LinearLayout>
-
-            <View style="@style/PreferenceCategoryDivider"/>
+-->
+            <!--<View style="@style/PreferenceCategoryDivider"/>
 
             <LinearLayout
                 android:id="@+id/category_humidity_interval"
@@ -166,9 +166,9 @@
                 </LinearLayout>
 
             </LinearLayout>
+-->
 
-
-            <View style="@style/PreferenceCategoryDivider"/>
+            <!--<View style="@style/PreferenceCategoryDivider"/>
 
             <LinearLayout
                 android:id="@+id/category_color_intensity_interval"
@@ -203,9 +203,9 @@
 
                 </LinearLayout>
 
-            </LinearLayout>
+            </LinearLayout>-->
 
-            <View style="@style/PreferenceCategoryDivider"/>
+            <!--<View style="@style/PreferenceCategoryDivider"/>
 
             <LinearLayout
                 android:id="@+id/category_gas_mode"
@@ -241,10 +241,10 @@
                 </LinearLayout>
 
             </LinearLayout>
-
+-->
         </LinearLayout>
 
-        <LinearLayout
+       <!-- <LinearLayout
             style="@style/PreferenceCategoryLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -438,7 +438,7 @@
             </LinearLayout>
 
         </LinearLayout>
-
+-->
     </LinearLayout>
 
 </ScrollView>

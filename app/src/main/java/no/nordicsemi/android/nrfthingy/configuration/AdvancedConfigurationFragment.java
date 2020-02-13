@@ -55,13 +55,13 @@ import no.nordicsemi.android.nrfthingy.common.Utils;
 import no.nordicsemi.android.nrfthingy.database.DatabaseHelper;
 import no.nordicsemi.android.thingylib.ThingySdkManager;
 
-public class AdvancedConfigurationFragment extends Fragment implements ThingyAdvancedSettingsChangeListener {
+public class AdvancedConfigurationFragment extends Fragment { //implements ThingyAdvancedSettingsChangeListener {
     private BluetoothDevice mDevice;
     private int mSettingsMode;
     private ThingySdkManager mThingySdkManager;
 
     private TextView mTemperatureIntervalSummary;
-    private TextView mPressureIntervalSummary;
+   /* private TextView mPressureIntervalSummary;
     private TextView mHumidityIntervalSummary;
     private TextView mColorIntensityIntervalSummary;
     private TextView mGasModeSummary;
@@ -69,7 +69,7 @@ public class AdvancedConfigurationFragment extends Fragment implements ThingyAdv
     private TextView mMotionTemperatureIntervalSummary;
     private TextView mCompassIntervalSummary;
     private TextView mMotionIntervalSummary;
-    private TextView mWakeOnMotionSummary;
+    private TextView mWakeOnMotionSummary;*/
 
     public static AdvancedConfigurationFragment getInstance(final BluetoothDevice device) {
         final AdvancedConfigurationFragment fragment = new AdvancedConfigurationFragment();
@@ -98,15 +98,15 @@ public class AdvancedConfigurationFragment extends Fragment implements ThingyAdv
         final View rootView = inflater.inflate(R.layout.fragment_advanced_configuration, container, false);
         final LinearLayout temperature = rootView.findViewById(R.id.category_temp_interval);
         mTemperatureIntervalSummary = rootView.findViewById(R.id.category_temp_interval_summary);
-        final LinearLayout pressure = rootView.findViewById(R.id.category_pressure_interval);
+        /*final LinearLayout pressure = rootView.findViewById(R.id.category_pressure_interval);
         mPressureIntervalSummary = rootView.findViewById(R.id.category_pressure_interval_summary);
         final LinearLayout humidity = rootView.findViewById(R.id.category_humidity_interval);
         mHumidityIntervalSummary = rootView.findViewById(R.id.category_humidity_interval_summary);
         final LinearLayout colorIntensity = rootView.findViewById(R.id.category_color_intensity_interval);
         mColorIntensityIntervalSummary = rootView.findViewById(R.id.category_color_intensity_interval_summary);
         final LinearLayout gasMode = rootView.findViewById(R.id.category_gas_mode);
-        mGasModeSummary = rootView.findViewById(R.id.category_gas_mode_summary);
-        final LinearLayout pedometer = rootView.findViewById(R.id.category_pedometer_interval);
+        mGasModeSummary = rootView.findViewById(R.id.category_gas_mode_summary);*/
+        /*final LinearLayout pedometer = rootView.findViewById(R.id.category_pedometer_interval);
         mPedometerIntervalSummary = rootView.findViewById(R.id.category_pedometer_interval_summary);
         final LinearLayout temperatureMotion = rootView.findViewById(R.id.category_motion_temperature_interval);
         mMotionTemperatureIntervalSummary = rootView.findViewById(R.id.category_motion_temperature_interval_summary);
@@ -115,7 +115,7 @@ public class AdvancedConfigurationFragment extends Fragment implements ThingyAdv
         final LinearLayout motion = rootView.findViewById(R.id.category_motion_interval);
         mMotionIntervalSummary = rootView.findViewById(R.id.category_motion_interval_summary);
         final LinearLayout wakeOnMotion = rootView.findViewById(R.id.category_wake_on_motion);
-        mWakeOnMotionSummary = rootView.findViewById(R.id.category_wake_on_motion_summary);
+        mWakeOnMotionSummary = rootView.findViewById(R.id.category_wake_on_motion_summary);*/
 
         final DatabaseHelper databaseHelper = new DatabaseHelper(getContext());
         final String thingyName = databaseHelper.getDeviceName(mDevice.getAddress());
@@ -134,7 +134,7 @@ public class AdvancedConfigurationFragment extends Fragment implements ThingyAdv
             }
         });
 
-        pressure.setOnClickListener(new View.OnClickListener() {
+       /* pressure.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
                 if (mThingySdkManager != null && mThingySdkManager.isConnected(mDevice)) {
@@ -146,9 +146,9 @@ public class AdvancedConfigurationFragment extends Fragment implements ThingyAdv
                     fragment.show(getChildFragmentManager(), null);
                 }
             }
-        });
+        });*/
 
-        humidity.setOnClickListener(new View.OnClickListener() {
+        /*humidity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
                 if (mThingySdkManager != null && mThingySdkManager.isConnected(mDevice)) {
@@ -160,9 +160,9 @@ public class AdvancedConfigurationFragment extends Fragment implements ThingyAdv
                     fragment.show(getChildFragmentManager(), null);
                 }
             }
-        });
+        });*/
 
-        colorIntensity.setOnClickListener(new View.OnClickListener() {
+        /*colorIntensity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
                 if (mThingySdkManager != null && mThingySdkManager.isConnected(mDevice)) {
@@ -174,9 +174,9 @@ public class AdvancedConfigurationFragment extends Fragment implements ThingyAdv
                     fragment.show(getChildFragmentManager(), null);
                 }
             }
-        });
+        });*/
 
-        gasMode.setOnClickListener(new View.OnClickListener() {
+        /*gasMode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
                 if (mThingySdkManager != null && mThingySdkManager.isConnected(mDevice)) {
@@ -189,8 +189,8 @@ public class AdvancedConfigurationFragment extends Fragment implements ThingyAdv
                 }
             }
         });
-
-        pedometer.setOnClickListener(new View.OnClickListener() {
+*/
+        /*pedometer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
                 if (mThingySdkManager != null && mThingySdkManager.isConnected(mDevice)) {
@@ -202,9 +202,9 @@ public class AdvancedConfigurationFragment extends Fragment implements ThingyAdv
                     fragment.show(getChildFragmentManager(), null);
                 }
             }
-        });
+        });*/
 
-        temperatureMotion.setOnClickListener(new View.OnClickListener() {
+        /*temperatureMotion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
                 if (mThingySdkManager != null && mThingySdkManager.isConnected(mDevice)) {
@@ -216,9 +216,9 @@ public class AdvancedConfigurationFragment extends Fragment implements ThingyAdv
                     fragment.show(getChildFragmentManager(), null);
                 }
             }
-        });
+        });*/
 
-        compass.setOnClickListener(new View.OnClickListener() {
+        /*compass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
                 if (mThingySdkManager != null && mThingySdkManager.isConnected(mDevice)) {
@@ -230,9 +230,9 @@ public class AdvancedConfigurationFragment extends Fragment implements ThingyAdv
                     fragment.show(getChildFragmentManager(), null);
                 }
             }
-        });
+        });*/
 
-        motion.setOnClickListener(new View.OnClickListener() {
+        /*motion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
                 if (mThingySdkManager != null && mThingySdkManager.isConnected(mDevice)) {
@@ -244,9 +244,9 @@ public class AdvancedConfigurationFragment extends Fragment implements ThingyAdv
                     fragment.show(getChildFragmentManager(), null);
                 }
             }
-        });
+        });*/
 
-        wakeOnMotion.setOnClickListener(new View.OnClickListener() {
+        /*wakeOnMotion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
                 if (mThingySdkManager != null && mThingySdkManager.isConnected(mDevice)) {
@@ -259,9 +259,9 @@ public class AdvancedConfigurationFragment extends Fragment implements ThingyAdv
                 }
             }
         });
-
+*/
         updateTemperatureInterval();
-        updatePressureInterval();
+        /*updatePressureInterval();
         updateHumidityInterval();
         updateColorIntensityInterval();
         updateGasMode();
@@ -269,7 +269,7 @@ public class AdvancedConfigurationFragment extends Fragment implements ThingyAdv
         updateMotionTemperatureInterval();
         updateCompassInterval();
         updateMotionInterval();
-        updateWakeOnMotion();
+        updateWakeOnMotion();*/
 
         return rootView;
     }
@@ -280,7 +280,7 @@ public class AdvancedConfigurationFragment extends Fragment implements ThingyAdv
         //LocalBroadcastManager.getInstance(getActivity()).unregisterReceiver(mConfigurationBroadcastReceiver);
     }
 
-    @Override
+    //@Override
     public void updateTemperatureInterval() {
         final int interval = mThingySdkManager.getEnvironmentTemperatureInterval(mDevice);
         if (interval > 0) {
@@ -288,31 +288,31 @@ public class AdvancedConfigurationFragment extends Fragment implements ThingyAdv
         }
     }
 
-    @Override
+    /*@Override
     public void updatePressureInterval() {
         final int interval = mThingySdkManager.getPressureInterval(mDevice);
         if (interval > 0) {
             mPressureIntervalSummary.setText(getString(R.string.interval_ms, interval));
         }
-    }
+    }*/
 
-    @Override
+   /* @Override
     public void updateHumidityInterval() {
         final int interval = mThingySdkManager.getHumidityInterval(mDevice);
         if (interval > 0) {
             mHumidityIntervalSummary.setText(getString(R.string.interval_ms, interval));
         }
-    }
+    }*/
 
-    @Override
+    /*@Override
     public void updateColorIntensityInterval() {
         final int interval = mThingySdkManager.getColorIntensityInterval(mDevice);
         if (interval > 0) {
             mColorIntensityIntervalSummary.setText(getString(R.string.interval_ms, interval));
         }
-    }
+    }*/
 
-    @Override
+    /*@Override
     public void updateGasMode() {
         final int gasMode = mThingySdkManager.getGasMode(mDevice);
         if (gasMode > 0) {
@@ -324,42 +324,42 @@ public class AdvancedConfigurationFragment extends Fragment implements ThingyAdv
                 mGasModeSummary.setText(R.string.gas_mode_three);
             }
         }
-    }
+    }*/
 
-    @Override
+    /*@Override
     public void updatePedometerInterval() {
         final int interval = mThingySdkManager.getPedometerInterval(mDevice);
         if (interval > 0) {
             mPedometerIntervalSummary.setText(getString(R.string.interval_ms, interval));
         }
-    }
+    }*/
 
-    @Override
+   /* @Override
     public void updateMotionTemperatureInterval() {
         final int interval = mThingySdkManager.getMotionTemperatureInterval(mDevice);
         if (interval > 0) {
             mMotionTemperatureIntervalSummary.setText(getString(R.string.interval_ms, interval));
         }
-    }
+    }*/
 
-    @Override
+    /*@Override
     public void updateCompassInterval() {
         final int interval = mThingySdkManager.getCompassInterval(mDevice);
         if (interval > 0) {
             mCompassIntervalSummary.setText(getString(R.string.interval_ms, interval));
         }
     }
-
-    @Override
+*/
+    /*@Override
     public void updateMotionInterval() {
         final int interval = mThingySdkManager.getMotionInterval(mDevice);
         if (interval > 0) {
             mMotionIntervalSummary.setText(getString(R.string.interval_hz, interval));
         }
-    }
+    }*/
 
-    @Override
+    /*@Override
     public void updateWakeOnMotion() {
         mWakeOnMotionSummary.setText(String.valueOf(mThingySdkManager.getWakeOnMotionState(mDevice) ? getString(R.string.on) : getString(R.string.off)));
-    }
+    }*/
 }

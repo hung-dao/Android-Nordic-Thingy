@@ -37,7 +37,7 @@
   -->
 
 <resources>
-    <string name="app_name">Nordic Thingy</string>
+    <string name="app_name">Seafood Age</string>
     <string name="thingy_52">Thingy:52 </string>
     <string name="action_about">About</string>
     <string name="environment_current_conditions_title">Current Conditions</string>

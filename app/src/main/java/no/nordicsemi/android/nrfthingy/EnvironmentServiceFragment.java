@@ -418,7 +418,7 @@ public class EnvironmentServiceFragment extends Fragment implements ScannerFragm
             });
         }
 
-        mWeatherSettings.setOnClickListener(new View.OnClickListener() {
+        /*mWeatherSettings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (mDevice != null) {
@@ -431,7 +431,7 @@ public class EnvironmentServiceFragment extends Fragment implements ScannerFragm
                     }
                 }
             }
-        });
+        });*/
 
         updateEnvironmentCardView();
 

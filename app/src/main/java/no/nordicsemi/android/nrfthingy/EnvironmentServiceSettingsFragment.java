@@ -233,7 +233,7 @@ public class EnvironmentServiceSettingsFragment extends DialogFragment {
             @Override
             public void onClick(View v) {
                 if (validateInput()) {
-                    configureEnvironmentService();
+                    //configureEnvironmentService();
                     dismiss();
                 }
             }
@@ -303,10 +303,10 @@ public class EnvironmentServiceSettingsFragment extends DialogFragment {
         return true;
     }
 
-    private void configureEnvironmentService() {
+    /*private void configureEnvironmentService() {
         final int temperatureInterval = Integer.parseInt(mTemperatureIntervalView.getText().toString().trim());
 
-/*
+
         final int pressureInterval = Integer.parseInt(mPressureIntervalView.getText().toString().trim());
 
         final int humidityInterval = Integer.parseInt(mHumidityIntervalView.getText().toString().trim());
@@ -314,9 +314,9 @@ public class EnvironmentServiceSettingsFragment extends DialogFragment {
         final int colorIntensityInterval = Integer.parseInt(mColorIntensityIntervalView.getText().toString().trim());
 
         final int gasMode = mGasModeView.getSelectedItemPosition() + 1;
-*/
+
         mThingySdkManager.setEnvironmentConfigurationCharacteristic(mDevice, temperatureInterval);
-    }
+    }*/
 
     private void updateUi() {
         final String mTemperatureInterval = String.valueOf(mThingySdkManager.getEnvironmentTemperatureInterval(mDevice));

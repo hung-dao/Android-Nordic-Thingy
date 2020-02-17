@@ -1346,19 +1346,15 @@ public class ThingyConnection extends BluetoothGattCallback {
      * Configures the Environment configuration characteristic for a particular thingy
      *
      * @param temperatureInterval    in ms
-     * @param pressureInterval       in ms
-     * @param humidityInterval       in ms
-     * @param colorIntensityInterval in ms
-     * @param gasMode                as an interval in ms
      */
-    boolean setEnvironmentConfigurationCharacteristic(final int temperatureInterval, final int pressureInterval, final int humidityInterval, final int colorIntensityInterval, final int gasMode) {
+    boolean setEnvironmentConfigurationCharacteristic(final int temperatureInterval) {
         if (mEnvironmentConfigurationCharacteristic != null) {
             if (temperatureInterval < ThingyUtils.TEMP_MIN_INTERVAL || temperatureInterval > ThingyUtils.ENVIRONMENT_NOTIFICATION_MAX_INTERVAL) {
                 Log.v(ThingyUtils.TAG, "Invalid temperature interval range");
                 return false;
             }
 
-            if (pressureInterval < ThingyUtils.PRESSURE_MIN_INTERVAL || pressureInterval > ThingyUtils.ENVIRONMENT_NOTIFICATION_MAX_INTERVAL) {
+           /* if (pressureInterval < ThingyUtils.PRESSURE_MIN_INTERVAL || pressureInterval > ThingyUtils.ENVIRONMENT_NOTIFICATION_MAX_INTERVAL) {
                 Log.v(ThingyUtils.TAG, "Invalid pressure interval range");
                 return false;
             }
@@ -1376,13 +1372,13 @@ public class ThingyConnection extends BluetoothGattCallback {
             if (gasMode != ThingyUtils.GAS_MODE_1 && gasMode != ThingyUtils.GAS_MODE_2 && gasMode != ThingyUtils.GAS_MODE_3) {
                 Log.v(ThingyUtils.TAG, "Invalid gas mode");
                 return false;
-            }
+            }*/
 
             mTemperatureInterval = temperatureInterval;
-            mPressureInterval = pressureInterval;
+            /*mPressureInterval = pressureInterval;
             mHumidityInterval = humidityInterval;
             mColorIntensityInterval = colorIntensityInterval;
-            mGasMode = gasMode;
+            mGasMode = gasMode;*/
 
             byte[] data;
             //Thingy pre-release fw contained only 9 bytes in the configuration characteristic
@@ -1391,20 +1387,20 @@ public class ThingyConnection extends BluetoothGattCallback {
             if (mEnvironmentConfigurationCharacteristic.getValue().length == 12) {
                 data = new byte[12];
                 ThingyUtils.setValue(data, 0, temperatureInterval, BluetoothGattCharacteristic.FORMAT_UINT16);
-                ThingyUtils.setValue(data, 2, pressureInterval, BluetoothGattCharacteristic.FORMAT_UINT16);
+               /* ThingyUtils.setValue(data, 2, pressureInterval, BluetoothGattCharacteristic.FORMAT_UINT16);
                 ThingyUtils.setValue(data, 4, humidityInterval, BluetoothGattCharacteristic.FORMAT_UINT16);
                 ThingyUtils.setValue(data, 6, colorIntensityInterval, BluetoothGattCharacteristic.FORMAT_UINT16);
-                ThingyUtils.setValue(data, 8, gasMode, BluetoothGattCharacteristic.FORMAT_UINT8);
+                ThingyUtils.setValue(data, 8, gasMode, BluetoothGattCharacteristic.FORMAT_UINT8);*/
                 ThingyUtils.setValue(data, 9, mCallibrationRIntensity, BluetoothGattCharacteristic.FORMAT_UINT8);
                 ThingyUtils.setValue(data, 10, mCallibrationGIntensity, BluetoothGattCharacteristic.FORMAT_UINT8);
                 ThingyUtils.setValue(data, 11, mCallibrationBIntensity, BluetoothGattCharacteristic.FORMAT_UINT8);
             } else {
                 data = new byte[9];
                 ThingyUtils.setValue(data, 0, temperatureInterval, BluetoothGattCharacteristic.FORMAT_UINT16);
-                ThingyUtils.setValue(data, 2, pressureInterval, BluetoothGattCharacteristic.FORMAT_UINT16);
+                /*ThingyUtils.setValue(data, 2, pressureInterval, BluetoothGattCharacteristic.FORMAT_UINT16);
                 ThingyUtils.setValue(data, 4, humidityInterval, BluetoothGattCharacteristic.FORMAT_UINT16);
                 ThingyUtils.setValue(data, 6, colorIntensityInterval, BluetoothGattCharacteristic.FORMAT_UINT16);
-                ThingyUtils.setValue(data, 8, gasMode, BluetoothGattCharacteristic.FORMAT_UINT8);
+                ThingyUtils.setValue(data, 8, gasMode, BluetoothGattCharacteristic.FORMAT_UINT8);*/
             }
 
             add(RequestType.WRITE_CHARACTERISTIC, mEnvironmentConfigurationCharacteristic, data, BluetoothGattCharacteristic.WRITE_TYPE_DEFAULT);

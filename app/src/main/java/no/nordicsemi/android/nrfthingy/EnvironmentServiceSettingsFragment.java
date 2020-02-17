@@ -315,7 +315,7 @@ public class EnvironmentServiceSettingsFragment extends DialogFragment {
 
         final int gasMode = mGasModeView.getSelectedItemPosition() + 1;
 */
-        mThingySdkManager.setEnvironmentConfigurationCharacteristic(mDevice, temperatureInterval, 0, 0, 0, 0); //pressureInterval, humidityInterval, colorIntensityInterval, gasMode);
+        mThingySdkManager.setEnvironmentConfigurationCharacteristic(mDevice, temperatureInterval);
     }
 
     private void updateUi() {

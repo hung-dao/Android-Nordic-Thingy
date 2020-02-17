@@ -320,24 +320,18 @@ public class ThingySdkManager {
      *
      * @param device Bluetooth device
      * @param temperatureInterval in ms
-     * @param pressureInterval in ms
-     * @param humidityInterval in ms
-     * @param colorIntensityInterval in ms
-     * @param gasMode as an interval in ms
      */
     public boolean setEnvironmentConfigurationCharacteristic(final BluetoothDevice device,
-                                                             final int temperatureInterval,
-                                                             final int pressureInterval,
+                                                             final int temperatureInterval
+                                                             /*final int pressureInterval,
                                                              final int humidityInterval,
                                                              final int colorIntensityInterval,
-                                                             final int gasMode) {
+                                                             final int gasMode*/) {
         if (device != null) {
             if (mBinder != null) {
                 final ThingyConnection thingyConnection = mBinder.getThingyConnection(device);
                 if (thingyConnection != null) {
-                    return thingyConnection.setEnvironmentConfigurationCharacteristic(
-                            temperatureInterval, pressureInterval, humidityInterval,
-                            colorIntensityInterval, gasMode);
+                    return thingyConnection.setEnvironmentConfigurationCharacteristic(temperatureInterval);
                 }
             }
         }

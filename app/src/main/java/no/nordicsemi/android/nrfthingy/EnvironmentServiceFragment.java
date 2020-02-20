@@ -656,7 +656,7 @@ public class EnvironmentServiceFragment extends Fragment implements ScannerFragm
             }
 
             mLineChartTemperature.notifyDataSetChanged();
-            mLineChartTemperature.setVisibleXRangeMaximum(10);
+            mLineChartTemperature.setVisibleXRangeMaximum(6);
 
             if (data.getXValCount() >= 10) {
                 final int highestVisibleIndex = mLineChartTemperature.getHighestVisibleXIndex();

@@ -286,7 +286,7 @@ public class ThingyUtils {
     public static final int FORMAT_UINT16_BIG_INDIAN                                            = 0x62;
     public static final int FORMAT_UINT32_BIG_INDIAN                                            = 0x64;
 
-    public static final int MAX_VISISBLE_GRAPH_ENTRIES                                          = 300;
+    public static final int MAX_VISISBLE_GRAPH_ENTRIES                                          = 30000;
 
     public static final SimpleDateFormat TIME_FORMAT                                            = new SimpleDateFormat("HH:mm:ss", Locale.US);
     public static final SimpleDateFormat TIME_FORMAT_PEDOMETER                                  = new SimpleDateFormat("mm:ss:SS", Locale.US);
